@@ -1,0 +1,9 @@
+<h1>Question#index</h1>
+<% @questions.each do |question| %>
+   <%= question.question_content %>
+   <%= link_to "Show", question_path(question) %>
+   <%= link_to "Edit", edit_question_path(question) %>
+   <%= link_to "Delete", question_path(question), method: :delete, data: { confirm: 'Are you sure?' }  %>
+ <% end %>
+ 
+ <%= link_to "New", new_question_path %>
