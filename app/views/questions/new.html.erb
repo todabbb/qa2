@@ -1,6 +1,7 @@
 <h1>Question#new</h1>
 <%= form_with model: @question do |f| %>
    <%= f.text_field :question_content %>
+   <%= f.text_field :answer_content %>
    <%= f.submit "Create" %>
  <% end %>
  

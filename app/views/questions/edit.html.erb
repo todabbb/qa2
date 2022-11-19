@@ -2,9 +2,11 @@
  
  <%= form_with model: @question do |f| %>
    <p>変更前</p>
-   <%= @question.question_content %>
+   <%= @question.question_content %>'
+   <%= @question.answer_content %>
    <p>変更後</p>
    <%= f.text_field :question_content %>
+   <%= f.text_field :answer_content %>
    <%= f.submit "Update" %>
  <% end %>
     
