@@ -5,6 +5,9 @@ class QuestionsController < ApplicationController
 
   def show
     @question = current_user.questions.find(params[:id])
+    @answers = @question.answers
+    @true_answers = @answers.where(select_flg:true).count
+    @false_answers = @answers.where(select_flg:false).count
   end
 
   def new

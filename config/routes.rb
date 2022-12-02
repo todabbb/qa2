@@ -14,5 +14,8 @@ Rails.application.routes.draw do
     get "login", :to => "users/sessions#new"
     delete "logout", :to => "users/sessions#destroy"
   end
-  resources :questions
+  
+  resources :questions do
+    resources :answers
+  end
 end
