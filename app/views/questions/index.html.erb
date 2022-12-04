@@ -9,4 +9,12 @@
  
  <br>
  
+ <% @random.each do |question| %>
+  <%= question.question_content %>
+  <%= link_to "Show", question_path(question) %>
+  <br>
+<% end %>
+ 
+ <br>
+ 
  <%= link_to "New", new_question_path %>

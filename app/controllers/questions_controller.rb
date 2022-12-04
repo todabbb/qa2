@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
   def index
     @questions = current_user.questions.all
+    @random = @questions.order("RANDOM()").all
   end
 
   def show
@@ -8,6 +9,7 @@ class QuestionsController < ApplicationController
     @answers = @question.answers
     @true_answers = @answers.where(select_flg:true).count
     @false_answers = @answers.where(select_flg:false).count
+    
   end
 
   def new
@@ -32,7 +34,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question = current_user.questions.find(params[:id])
-    @questiont.destroy
+    @question.destroy
     redirect_to question_url
   end
   
